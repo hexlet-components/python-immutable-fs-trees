@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "hexlet-immutable-fs-trees"
+version = "0.1.0"
+description = ""
+authors = ["Hexlet Team <info@hexlet.io>"]
+license = "ISC"
+readme = "README.md"
+homepage = "https://github.com/hexlet-components/python-immutable-fs-trees"
+repository = "https://github.com/hexlet-components/python-immutable-fs-trees"
+classifiers = [
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: ISC License (ISCL)",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Education",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+]
+packages = [
+    { include = "hexlet/fs/*.py", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.1"
+wemake-python-styleguide = "^0.14.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

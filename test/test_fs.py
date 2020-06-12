@@ -87,4 +87,24 @@ def test_get_meta():
     assert fs.get_children(dir) == []
     assert fs.get_children(tree) == expected
 
-
+def test_flatten():
+    assert fs.flatten([]) == []
+    assert fs.flatten([
+        1,
+        2,
+        [3, 5],
+        [[4, 3], 2],
+    ]) == [1, 2, 3, 5, 4, 3, 2]
+    assert fs.flatten([
+        [1, [5], [], [[-3, 'hi']]],
+        'string',
+        10,
+        [[[5]]],
+    ]) == [1, 5, -3, 'hi', 'string', 10, 5]
+    assert fs.flatten([
+        1,
+        2,
+        {'a': 1},
+        [3, 5],
+        2,
+    ]) == [1, 2, {'a': 1}, 3, 5, 2]

@@ -50,3 +50,16 @@ def get_meta(node):
 def get_name(node):
     '''Return name of node.'''
     return node.get('name')
+
+
+def flatten(tree):
+    result = []
+
+    def walk(subtree):
+        for item in subtree:
+            if isinstance(item, list):
+                walk(item)
+            else:
+                result.append(item)
+    walk(tree)
+    return result

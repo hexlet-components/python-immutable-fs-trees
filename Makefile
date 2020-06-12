@@ -20,3 +20,7 @@ lint:
 .PHONY: install
 install:
 	@poetry install
+
+.PHONY: build
+build:
+	@poetry build

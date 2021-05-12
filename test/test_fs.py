@@ -1,4 +1,4 @@
-'''Tests for hexlet.fs_tree.'''
+"""Tests for hexlet.fs_tree."""
 
 from hexlet import fs
 
@@ -13,7 +13,7 @@ def test_build():
     tree = fs.mkdir('/', [
         fs.mkdir('etc'),
         fs.mkdir('usr'),
-        fs.mkfile('robots.txt')
+        fs.mkfile('robots.txt'),
     ])
 
     expected = {
@@ -63,7 +63,7 @@ def test_get_children():
     tree = fs.mkdir('/', [
         fs.mkdir('etc'),
         fs.mkdir('usr'),
-        fs.mkfile('robots.txt')
+        fs.mkfile('robots.txt'),
     ])
     expected = [
         {

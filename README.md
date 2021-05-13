@@ -1,6 +1,5 @@
 # python-immutable-fs-trees
 
-
 [![github action status](https://github.com/hexlet-components/python-immutable-fs-trees/workflows/Python%20CI/badge.svg)](https://github.com/hexlet-components/python-immutable-fs-trees/actions)
 
 ## Install
@@ -12,6 +11,7 @@ pip install hexlet-immutable-fs-trees
 ## Usage example
 
 ```python
+
 >>> import hexlet.fs as fs
 >>> fs.is_file(fs.mkfile('config'))
 True
@@ -24,6 +24,7 @@ True
 'config'
 >>> list(map(lambda item: fs.get_name(item), children))
 ['config', 'hosts']
+
 ```
 
 [![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/hexletguides.github.io/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about)

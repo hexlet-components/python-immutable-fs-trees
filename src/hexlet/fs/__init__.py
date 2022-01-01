@@ -1,7 +1,5 @@
 # coding: utf-8
 
-'''Description'''
-
 __all__ = (   # noqa: WPS317
     'mkfile', 'mkdir',
     'is_file', 'is_directory',
@@ -9,46 +7,46 @@ __all__ = (   # noqa: WPS317
 
 
 def mkfile(name, meta={}):
-    '''Return file node.'''
+    """Return file node."""
     return {
-            'name': name,
-            'meta': meta,
-            'type': 'file',
-           }
+        'name': name,
+        'meta': meta,
+        'type': 'file'
+    }
 
 
 def mkdir(name, children=[], meta={}):
-    '''Return directory node.'''
+    """Return directory node."""
     return {
-            'name': name,
-            'children': children,
-            'meta': meta,
-            'type': 'directory',
-           }
+        'name': name,
+        'children': children,
+        'meta': meta,
+        'type': 'directory'
+    }
 
 
 def is_directory(node):
-    '''Check is node a directory.'''
+    """Check is node a directory."""
     return node.get('type') == 'directory'
 
 
 def is_file(node):
-    '''Check is node a file.'''
+    """Check is node a file."""
     return node.get('type') == 'file'
 
 
 def get_children(directory):
-    '''Return children of node.'''
+    """Return children of node."""
     return directory.get('children')
 
 
 def get_meta(node):
-    '''Return meta of node.'''
+    """Return meta of node."""
     return node.get('meta')
 
 
 def get_name(node):
-    '''Return name of node.'''
+    """Return name of node."""
     return node.get('name')
 
 
@@ -57,9 +55,11 @@ def flatten(tree):
 
     def walk(subtree):
         for item in subtree:
+
             if isinstance(item, list):
                 walk(item)
             else:
                 result.append(item)
     walk(tree)
+
     return result

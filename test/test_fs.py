@@ -1,4 +1,4 @@
-'''Tests for hexlet.fs_tree.'''
+"""Tests for hexlet.fs_tree."""
 
 from hexlet import fs
 
@@ -8,32 +8,32 @@ def test_is_directory():
     assert fs.is_directory(node)
     assert not fs.is_file(node)
 
+
 def test_build():
     tree = fs.mkdir('/', [
         fs.mkdir('etc'),
         fs.mkdir('usr'),
-        fs.mkfile('robots.txt')
+        fs.mkfile('robots.txt'),
     ])
 
     expected = {
         'children': [
-          {
-            'children': [],
-            'meta': {},
-            'name': 'etc',
-            'type': 'directory',
-          },
-          {
-            'children': [],
-            'meta': {},
-            'name': 'usr',
-            'type': 'directory',
-          },
-          {
-            'meta': {},
-            'name': 'robots.txt',
-            'type': 'file',
-          },
+            {
+                'children': [],
+                'meta': {},
+                'name': 'etc',
+                'type': 'directory'
+            },
+            {
+                'children': [],
+                'meta': {},
+                'name': 'usr',
+                'type': 'directory'},
+            {
+                'meta': {},
+                'name': 'robots.txt',
+                'type': 'file'
+            },
         ],
         'meta': {},
         'name': '/',
@@ -49,43 +49,44 @@ def test_get_name():
     assert fs.get_name(dir) == 'etc'
 
 
-def test_get_meta():
+def test_get_meta2():
     file = fs.mkfile('robots.txt', {'owner': 'root'})
     dir = fs.mkdir('etc')
     assert fs.get_meta(dir) == {}
     assert fs.get_meta(file).get('owner') == 'root'
 
 
-def test_get_meta():
+def test_get_meta3():
     file = fs.mkfile('robots.txt')
     dir = fs.mkdir('/')
     tree = fs.mkdir('/', [
         fs.mkdir('etc'),
         fs.mkdir('usr'),
-        fs.mkfile('robots.txt')
+        fs.mkfile('robots.txt'),
     ])
     expected = [
-          {
+        {
             'children': [],
             'meta': {},
             'name': 'etc',
             'type': 'directory',
-          },
-          {
+        },
+        {
             'children': [],
             'meta': {},
             'name': 'usr',
             'type': 'directory',
-          },
-          {
+        },
+        {
             'meta': {},
             'name': 'robots.txt',
             'type': 'file',
-          },
-        ]
+        },
+    ]
     assert not fs.get_children(file)
     assert fs.get_children(dir) == []
     assert fs.get_children(tree) == expected
+
 
 def test_flatten():
     assert fs.flatten([]) == []

@@ -16,9 +16,9 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-# packages = [
-#     { include = "hexlet/fs/*.py", from = "src" },
-# ]
+packages = [
+    { include = "src" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"

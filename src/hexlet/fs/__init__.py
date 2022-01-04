@@ -1,6 +1,6 @@
 # coding: utf-8
 
-__all__ = (   # noqa: WPS317
+__all__ = (
     'mkfile', 'mkdir',
     'is_file', 'is_directory',
 )

@@ -50,7 +50,7 @@ def test_get_name():
     assert fs.get_name(dir) == 'etc'
 
 
-def test_get_meta():
+def test_get_meta2():
     file = fs.mkfile('robots.txt', {'owner': 'root'})
     dir = fs.mkdir('etc')
     assert fs.get_meta(dir) == {}

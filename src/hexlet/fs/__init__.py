@@ -1,8 +1,6 @@
 # coding: utf-8
 
-"""Description."""
-
-__all__ = (   # noqa: WPS317
+__all__ = (
     'mkfile', 'mkdir',
     'is_file', 'is_directory',
 )
@@ -57,9 +55,11 @@ def flatten(tree):
 
     def walk(subtree):
         for item in subtree:
+
             if isinstance(item, list):
                 walk(item)
             else:
                 result.append(item)
     walk(tree)
+
     return result

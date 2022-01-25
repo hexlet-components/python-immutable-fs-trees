@@ -11,6 +11,7 @@ pip install hexlet-immutable-fs-trees
 ## Usage example
 
 ```python
+
 >>> import hexlet.fs as fs
 >>> fs.is_file(fs.mkfile('config'))
 True

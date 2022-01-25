@@ -11,7 +11,7 @@ def mkfile(name, meta={}):
     return {
         'name': name,
         'meta': meta,
-        'type': 'file'
+        'type': 'file',
     }
 
 
@@ -21,33 +21,33 @@ def mkdir(name, children=[], meta={}):
         'name': name,
         'children': children,
         'meta': meta,
-        'type': 'directory'
+        'type': 'directory',
     }
 
 
 def is_directory(node):
     """Check is node a directory."""
-    return node.get('type') == 'directory'
+    return node['type'] == 'directory'
 
 
 def is_file(node):
     """Check is node a file."""
-    return node.get('type') == 'file'
+    return node['type'] == 'file'
 
 
 def get_children(directory):
     """Return children of node."""
-    return directory.get('children')
+    return directory.get('children', [])
 
 
 def get_meta(node):
     """Return meta of node."""
-    return node.get('meta')
+    return node['meta']
 
 
 def get_name(node):
     """Return name of node."""
-    return node.get('name')
+    return node['name']
 
 
 def flatten(tree):

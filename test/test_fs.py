@@ -22,17 +22,18 @@ def test_build():
                 'children': [],
                 'meta': {},
                 'name': 'etc',
-                'type': 'directory'
+                'type': 'directory',
             },
             {
                 'children': [],
                 'meta': {},
                 'name': 'usr',
-                'type': 'directory'},
+                'type': 'directory',
+            },
             {
                 'meta': {},
                 'name': 'robots.txt',
-                'type': 'file'
+                'type': 'file',
             },
         ],
         'meta': {},
@@ -56,7 +57,7 @@ def test_get_meta2():
     assert fs.get_meta(file).get('owner') == 'root'
 
 
-def test_get_meta3():
+def test_get_children():
     file = fs.mkfile('robots.txt')
     dir = fs.mkdir('/')
     tree = fs.mkdir('/', [

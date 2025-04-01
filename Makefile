@@ -1,26 +1,18 @@
 export PYTHONPATH=src
 
-
-.PHONY: install
 install:
-	@poetry install
+	@uv sync
 
-.PHONY: build
 build:
-	@poetry build
+	@uv build
 
-.PHONY: lint
 lint:
-	@poetry run flake8 --statistics src test
+	@uv run ruff check src test
 
-.PHONY: test
 test:
-	@poetry run pytest test
+	@uv run pytest test
 
-.PHONY: doctest
-doctest:
-	@poetry run python -m doctest -v README.md
-
-.PHONY: all
-all: lint test doctest
+check: test lint
 	@echo Done!
+
+.PHONY: install build lint test doctest check

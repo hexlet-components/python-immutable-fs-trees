@@ -1,21 +1,26 @@
 name: Python CI
 
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
-        with:
-          python-version: '3.13'
+
+      # setup-python не нужен: версию питона держит .python-version, и uv сам
+      # ставит её при первом `uv sync`. Единый источник версии, поэтому раннер
+      # и образ кита не могут разойтись.
+      - uses: astral-sh/setup-uv@v10.0.0
+
       - name: Install
-        run: |
-          pip install uv
-          make install
+        run: make install
       - name: Run linter
         run: make lint
       - name: Run tests

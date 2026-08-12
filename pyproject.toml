@@ -3,7 +3,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
 name = "hexlet-immutable-fs-trees"
-version = "0.1.7"
+version = "0.1.8"
 description = "File System Tree"
 authors = [{name = "Hexlet Team", email = "info@hexlet.io"}]
 license = "ISC"
@@ -12,7 +12,7 @@ repository = "https://github.com/hexlet-components/python-immutable-fs-trees"
 classifiers = [
     "Intended Audience :: Education",
     "License :: OSI Approved :: ISC License (ISCL)",
-    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3",
     "Topic :: Education",
     "Topic :: Software Development :: Libraries",
     "Typing :: Typed",

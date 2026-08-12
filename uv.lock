@@ -13,7 +13,7 @@ wheels = [
 
 [[package]]
 name = "hexlet-immutable-fs-trees"
-version = "0.1.7"
+version = "0.1.8"
 source = { editable = "." }
 
 [package.dev-dependencies]

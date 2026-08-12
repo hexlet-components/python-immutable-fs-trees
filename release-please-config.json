@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "bootstrap-sha": "4991584d82a84cc530e33ea232238b21f19c2648",
+  "packages": {
+    ".": {
+      "release-type": "python",
+      "package-name": "hexlet-immutable-fs-trees"
+    }
+  }
+}

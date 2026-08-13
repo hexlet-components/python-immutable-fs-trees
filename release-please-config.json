@@ -4,7 +4,8 @@
   "packages": {
     ".": {
       "release-type": "python",
-      "package-name": "hexlet-immutable-fs-trees"
+      "package-name": "hexlet-immutable-fs-trees",
+      "include-component-in-tag": false
     }
   }
 }

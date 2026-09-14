@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.10](https://github.com/hexlet-components/python-immutable-fs-trees/compare/v0.1.9...v0.1.10) (2026-09-14)
+
+
+### Documentation
+
+* **readme:** убрать упоминание закрытого hexlet-friends ([4d3c895](https://github.com/hexlet-components/python-immutable-fs-trees/commit/4d3c895e7946da510f3f53671b49f39dc0e1a414))
+
 ## [0.1.9](https://github.com/hexlet-components/python-immutable-fs-trees/compare/v0.1.8...v0.1.9) (2026-08-13)
 
 

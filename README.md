@@ -11,11 +11,11 @@ pip install hexlet-immutable-fs-trees
 ## Usage example
 
 ```python
-
 import hexlet.fs as fs
-fs.is_file(fs.mkfile('config'))  # True
-fs.is_directory(fs.mkdir('etc'))  # True
-tree = fs.mkdir('etc', [fs.mkfile('config'), fs.mkfile('hosts')])
+
+fs.is_file(fs.mkfile("config"))  # True
+fs.is_directory(fs.mkdir("etc"))  # True
+tree = fs.mkdir("etc", [fs.mkfile("config"), fs.mkfile("hosts")])
 children = fs.get_children(tree)
 fs.get_name(children[0])  # 'config'
 list(map(lambda item: fs.get_name(item), children))  # ['config', 'hosts']

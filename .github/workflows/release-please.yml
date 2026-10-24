@@ -5,27 +5,33 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-  pull-requests: write
-  # Trusted publishing на PyPI: токена в секретах нет, uv обменивает OIDC-токен
-  # раннера на разрешение публикации.
-  id-token: write
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+permissions: {}
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
-      - uses: googleapis/release-please-action@v5
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
         id: release
 
       # Публикация живёт вторым шагом этого же workflow. Схема «release-please
       # ставит тег, а отдельный workflow публикует по тегу» не работает: тег
       # ставит GITHUB_TOKEN, а от его событий GitHub workflow не запускает.
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
         if: ${{ steps.release.outputs.release_created }}
 
-      - uses: astral-sh/setup-uv@v10.0.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Publish to PyPI
